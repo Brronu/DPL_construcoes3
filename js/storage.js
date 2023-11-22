@@ -17,6 +17,17 @@ let images = [];
 let temporaryImageName = "";
 let temporaryImageStorage = [];
 
+document.getElementById('captureButton').addEventListener('click', function () {
+  const fileInput = document.createElement('input');
+  fileInput.type = 'file';
+  fileInput.accept = 'image/*';
+  fileInput.multiple = true;
+
+  fileInput.addEventListener('change', handleFileSelect);
+
+  fileInput.click();
+});
+
 let timestamp = new Date().getTime() // para poder ser utilizado como nome da imagem ao salvar no cloud storage.
 
 //criando um objeto para armazenar os dados da imagem
@@ -73,7 +84,7 @@ function handleFileSelect(evt) {
       const imgElement = document.createElement('img');
       imgElement.src = e.target.result;
       imgElement.alt = 'Imagem';
-      images.push(imgElement);
+      images.push({ file, imgElement });
       
       displayImages();
     };
