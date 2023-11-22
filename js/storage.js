@@ -17,7 +17,7 @@ let images = [];
 let temporaryImageName = "";
 let temporaryImageStorage = [];
 
-document.getElementById('captureButton').addEventListener('click', function () {
+document.getElementById('btnCamera').addEventListener('click', function () {
   const fileInput = document.createElement('input');
   fileInput.type = 'file';
   fileInput.accept = 'image/*';
