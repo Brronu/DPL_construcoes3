@@ -99,17 +99,17 @@ function displayImages() {
   });
 }
 
-//Esta função irá simplesmente adicionar as imagens uma após a outra na página
-// function displayImages() {
-//   while (imageContainer.firstChild) {
-//     imageContainer.removeChild(imageContainer.firstChild);
-//   }
+// Esta função irá simplesmente adicionar as imagens uma após a outra na página
+function displayImages() {
+  while (imageContainer.firstChild) {
+    imageContainer.removeChild(imageContainer.firstChild);
+  }
 
-//   for (let i = 0; i < images.length; i++) {
-//     imageContainer.appendChild(images[i].imgElement);
-//   }
+  for (let i = 0; i < images.length; i++) {
+    imageContainer.appendChild(images[i].imgElement);
+  }
   
-// }
+}
 
 // Validar os campos e inserir a imagem no Firebase Storage
 btnAvancar.addEventListener("click", async (evento) => {
