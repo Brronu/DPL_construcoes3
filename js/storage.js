@@ -22,8 +22,6 @@ const fileInput = document.getElementById('fileInput');
 fileInput.addEventListener('change', handleFileSelect);
 
 
-
-
 let timestamp = new Date().getTime() // para poder ser utilizado como nome da imagem ao salvar no cloud storage.
 
 //criando um objeto para armazenar os dados da imagem
@@ -89,18 +87,29 @@ function handleFileSelect(evt) {
   }
 }
 
+// Função para exibir as imagens na página
+function displayImages() {
+  // Limpe qualquer conteúdo anterior antes de exibir as imagens
+  const container = document.getElementById('imageContainer');
+  container.innerHTML = '';
+
+  // Adicione cada imagem ao contêiner
+  images.forEach(({ imgElement }) => {
+    container.appendChild(imgElement);
+  });
+}
 
 //Esta função irá simplesmente adicionar as imagens uma após a outra na página
-function displayImages() {
-  while (imageContainer.firstChild) {
-    imageContainer.removeChild(imageContainer.firstChild);
-  }
+// function displayImages() {
+//   while (imageContainer.firstChild) {
+//     imageContainer.removeChild(imageContainer.firstChild);
+//   }
 
-  for (let i = 0; i < images.length; i++) {
-    imageContainer.appendChild(images[i].imgElement);
-  }
+//   for (let i = 0; i < images.length; i++) {
+//     imageContainer.appendChild(images[i].imgElement);
+//   }
   
-}
+// }
 
 // Validar os campos e inserir a imagem no Firebase Storage
 btnAvancar.addEventListener("click", async (evento) => {
