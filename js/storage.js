@@ -17,16 +17,12 @@ let images = [];
 let temporaryImageName = "";
 let temporaryImageStorage = [];
 
-document.getElementById('captureButto').addEventListener('click', function () {
-  const fileInput = document.createElement('input');
-  fileInput.type = 'file';
-  fileInput.accept = 'image/*';
-  fileInput.multiple = true;
+// Adicione esta linha para ouvir o evento de mudança no input do tipo file
+const fileInput = document.getElementById('fileInput');
+fileInput.addEventListener('change', handleFileSelect);
 
-  fileInput.addEventListener('change', handleFileSelect);
 
-  fileInput.click();
-});
+
 
 let timestamp = new Date().getTime() // para poder ser utilizado como nome da imagem ao salvar no cloud storage.
 
