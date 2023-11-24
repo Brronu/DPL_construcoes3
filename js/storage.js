@@ -81,6 +81,9 @@ function handleFileSelect(evt) {
 
 
 //Esta função irá simplesmente adicionar as imagens uma após a outra na página
+
+const img = []
+
 function displayImages() {
   while (imageContainer.firstChild) {
     imageContainer.removeChild(imageContainer.firstChild);
@@ -88,7 +91,9 @@ function displayImages() {
 
   for (let i = 0; i < images.length; i++) {
     imageContainer.appendChild(images[i].imgElement);
+    img.push(images[i].imgElement)
   }
+  console.log(img)
 
 }
 
